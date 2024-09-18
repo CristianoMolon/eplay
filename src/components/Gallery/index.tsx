@@ -3,26 +3,9 @@ import Section from '../Section'
 import { Items, Item, Action, Modal, ModalContent } from './styles'
 import { GalleryItem } from '../../pages/Home'
 
-import zelda from '../../assets/images/zelda.png'
-import hogwarts from '../../assets/images/fundo_hogwarts.png'
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
 import fechar from '../../assets/images/fechar.png'
-
-const mock: GalleryItem[] = [
-  {
-    type: 'image',
-    url: zelda
-  },
-  {
-    type: 'image',
-    url: hogwarts
-  },
-  {
-    type: 'video',
-    url: 'https://www.youtube.com/embed/uHGShqcAHlQ?si=BxpwcDn8D8tfFe_7'
-  }
-]
 
 type Props = {
   defaultCover: string
