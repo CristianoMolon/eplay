@@ -3,15 +3,17 @@ import Product from '../Product'
 import { parseToBrl } from '../../utils'
 
 import { Container, List } from './styles'
+import Loader from '../Loader'
 
 export type Props = {
   title: string
   backgroud: 'gray' | 'black'
   games: Game[]
   id?: string
+  isLoading?: boolean
 }
 
-const ProductsList = ({ backgroud, title, games, id }: Props) => {
+const ProductsList = ({ backgroud, title, games, id, isLoading }: Props) => {
   const getGameTags = (game: Game) => {
     const tags = []
 
@@ -28,6 +30,10 @@ const ProductsList = ({ backgroud, title, games, id }: Props) => {
     }
 
     return tags
+  }
+
+  if (isLoading) {
+    return <Loader />
   }
 
   return (
