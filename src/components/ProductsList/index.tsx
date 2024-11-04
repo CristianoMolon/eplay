@@ -8,9 +8,9 @@ import Loader from '../Loader'
 export type Props = {
   title: string
   backgroud: 'gray' | 'black'
-  games: Game[]
+  games?: Game[]
   id?: string
-  isLoading?: boolean
+  isLoading: boolean
 }
 
 const ProductsList = ({ backgroud, title, games, id, isLoading }: Props) => {
@@ -41,19 +41,20 @@ const ProductsList = ({ backgroud, title, games, id, isLoading }: Props) => {
       <div className="container">
         <h2>{title}</h2>
         <List>
-          {games.map((game) => (
-            <li key={game.id}>
-              <Product
-                id={game.id}
-                category={game.details.category}
-                description={game.description}
-                image={game.media.thumbnail}
-                infos={getGameTags(game)}
-                system={game.details.system}
-                title={game.name}
-              />
-            </li>
-          ))}
+          {games &&
+            games.map((game) => (
+              <li key={game.id}>
+                <Product
+                  id={game.id}
+                  category={game.details.category}
+                  description={game.description}
+                  image={game.media.thumbnail}
+                  infos={getGameTags(game)}
+                  system={game.details.system}
+                  title={game.name}
+                />
+              </li>
+            ))}
         </List>
       </div>
     </Container>
