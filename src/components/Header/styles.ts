@@ -74,8 +74,9 @@ export const NavMobile = styled.nav`
   }
 `
 
-export const CartButton = styled.a`
+export const CartButton = styled.span`
   display: flex;
+  cursor: pointer;
 
   img {
     margin-left: 16px;
